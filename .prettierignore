@@ -1,0 +1,16 @@
+# Add files here to ignore them from prettier formatting
+
+.circleci
+.github
+.husky
+.next
+.storybook
+.vscode
+.yarn
+
+build
+dist
+node_modules
+out/
+coverage/
+next-env.*

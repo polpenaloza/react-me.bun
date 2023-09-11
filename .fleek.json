@@ -1,0 +1,7 @@
+{
+  "build": {
+    "image": "node:alpine",
+    "command": "yarn install && yarn build && yarn export",
+    "publicDir": "out"
+  }
+}

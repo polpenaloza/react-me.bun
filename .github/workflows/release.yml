@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - v1
+      - beta
+
+env:
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: ./.github/actions/node
+
+      - name: Perform Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+      # - name: Slack Error Notification
+      #   uses: ./.github/actions/slack-error
+      #   if: failure()
+
+      # - name: Slack Success Notification
+      #   uses: ./.github/actions/slack-success
+      #   if: success()

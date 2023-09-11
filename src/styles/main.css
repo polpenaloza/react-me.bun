@@ -1,0 +1,36 @@
+@import 'tailwind/_base.css';
+@import 'tailwind/_components.css';
+@import 'tailwind/_utilities.css';
+
+@import 'tea.css';
+@import 'birds.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-black text-slate-100;
+}
+
+.main-layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes blinking-cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

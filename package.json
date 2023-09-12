@@ -21,6 +21,7 @@
     "@trpc/react-query": "^10.38.1",
     "@trpc/server": "^10.38.1",
     "animate.css": "^4.1.1",
+    "bun-framework-next": "^12.2.5",
     "classnames": "^2.3.2",
     "debug": "^4.3.4",
     "i18next": "^23.4.6",
@@ -96,6 +97,5 @@
     "semantic-release": "semantic-release",
     "start": "next start"
   },
-  "type": "module",
   "version": "0.0.0-development"
 }

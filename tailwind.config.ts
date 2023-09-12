@@ -1,6 +1,7 @@
-const colors = require('tailwindcss/colors')
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
-module.exports = {
+const config: Config = {
   content: [
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -20,14 +21,14 @@ module.exports = {
         position: 'right, left, top, bottom, margin, padding',
         textColor: 'color',
       },
-      keyframes: () => ({
+      keyframes: {
         'fade-out': {
-          from: { opacity: 1 },
-          to: { opacity: 0 },
+          from: { opacity: '1' },
+          to: { opacity: '0' },
         },
         'fade-in': {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
+          from: { opacity: '0' },
+          to: { opacity: '1' },
         },
         blink: {
           '0%, 100%': { color: 'transparent' },
@@ -43,7 +44,7 @@ module.exports = {
             'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
-      }),
+      },
       animation: {
         'fade-out': 'fade-out 250ms ease-in-out',
         'fade-in': 'fade-in 250ms ease-in-out',
@@ -60,3 +61,5 @@ module.exports = {
     scrollbar: ['dark'],
   },
 }
+
+export default config

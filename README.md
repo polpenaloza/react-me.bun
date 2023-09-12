@@ -4,17 +4,17 @@
 
 ### Dependencies
 
-- [node](https://nodejs.org/en/download/) v18.x
-- [yarn](https://classic.yarnpkg.com/en/docs/install/) v1.x
+- [bun](https://bun.sh/docs) v1.0.0
+- [NextJS13](https://nextjs.org/docs) v13.0.0
 
 ### Pre-Requisites
 
-- install yarn https://classic.yarnpkg.com/en/docs/install/
+- install bun `curl -fsSL https://bun.sh/install | bash`
 
 ### Command lines
 
 ```sh
-yarn install
+bun install
 ```
 
 ## How to run
@@ -28,7 +28,7 @@ yarn install
 To develop on the app
 
 ```
-yarn dev
+bun run dev
 ```
 
 ### Build
@@ -36,5 +36,5 @@ yarn dev
 To build the app
 
 ```
-yarn build
+bun run build
 ```

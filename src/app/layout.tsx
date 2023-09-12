@@ -1,9 +1,9 @@
 import '~/styles/main.css'
 import 'animate.css'
 
-// import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-// const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 
 import { Metadata, ResolvingMetadata } from 'next'
 import { ReactNode } from 'react'
@@ -130,7 +130,7 @@ export async function generateMetadata(
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
-      <body >
+      <body className={inter.className}>
         <AppProviders>
           <Main>{children}</Main>
         </AppProviders>

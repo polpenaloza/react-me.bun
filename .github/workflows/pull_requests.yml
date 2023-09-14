@@ -9,6 +9,7 @@ on:
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  BUN_ENV: development
 
 jobs:
   setup:
@@ -22,11 +23,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: ./.github/actions/node
+      - name: Setup Bun.js
+        uses: ./.github/actions/bun
 
       # - name: Slack Error Notification
       #   uses: ./.github/actions/slack-error
+      #   with:
+      #     job: ${{ github.job }}
       #   if: failure()
 
   lint:
@@ -38,21 +41,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Restoring Node.js
-        uses: ./.github/actions/node
+      - name: Restoring Bun.js
+        uses: ./.github/actions/bun
 
       - name: Lint Code
-        run: yarn lint
+        run: bun run lint
         env:
           CI: true
 
       # - name: Slack Error Notification
       #   uses: ./.github/actions/slack-error
+      #   with:
+      #     job: ${{ github.job }}
       #   if: failure()
-
-      # - name: Slack Success Notification
-      #   uses: ./.github/actions/slack-success
-      #   if: success()
 
   build:
     runs-on: ubuntu-latest
@@ -63,18 +64,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Restoring Node.js
-        uses: ./.github/actions/node
+      - name: Restoring Bun.js
+        uses: ./.github/actions/bun
 
-      - name: Build
-        run: yarn build
+      - name: Build All
+        run: bun run build
         env:
           CI: true
 
       # - name: Slack Error Notification
       #   uses: ./.github/actions/slack-error
+      #   with:
+      #     job: ${{ github.job }}
       #   if: failure()
 
       # - name: Slack Success Notification
       #   uses: ./.github/actions/slack-success
+      #   with:
+      #     job: ${{ github.job }}
       #   if: success()

@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - v1
-      - beta
 
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  BUN_ENV: development
 
 jobs:
   Release:

@@ -94,6 +94,7 @@
     "format": "prettier --write .",
     "lint": "next lint",
     "prepare": "husky install",
+    "postinstall": "prisma generate",
     "semantic-release": "semantic-release",
     "start": "next start"
   },

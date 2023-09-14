@@ -1,0 +1,20 @@
+# .github/actions/bun/action.yml
+
+name: "Bun Cache restoration"
+description: "Setup a Bun environment and restore cache"
+
+inputs:
+  bun-version:
+    description: "Bun version to use, default to (1.x)"
+    required: true
+    default: 1.0.0
+
+runs:
+  using: "composite"
+  steps:
+    - uses: antongolub/action-setup-bun@v1
+      with:
+        bun-version: ${{ inputs.bun-version }}
+        cache: true
+    - shell: bash
+      run: bun install

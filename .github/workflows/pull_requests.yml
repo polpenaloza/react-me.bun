@@ -45,7 +45,7 @@ jobs:
         uses: ./.github/actions/bun
 
       - name: Lint Code
-        run: bun lint
+        run: bun run lint
         env:
           CI: true
 
@@ -68,7 +68,7 @@ jobs:
         uses: ./.github/actions/bun
 
       - name: Build All
-        run: bun build
+        run: bun run build
         env:
           CI: true
 

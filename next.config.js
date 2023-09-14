@@ -18,9 +18,6 @@ const nextConfig = getConfig({
     unoptimized: process.NEXT_PUBLIC_UNOPTIMIZE_IMAGE === 'false',
   },
   productionBrowserSourceMaps: true,
-  publicRuntimeConfig: {
-    NODE_ENV: process.NODE_ENV,
-  },
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: true,

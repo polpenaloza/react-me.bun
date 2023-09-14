@@ -9,6 +9,7 @@ on:
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  BUN_ENV: development
 
 jobs:
   setup:

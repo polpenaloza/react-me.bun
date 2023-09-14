@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env':
-      process.env.NODE_ENV === 'production'
+      process.env.BUN_ENV === 'production'
         ? {
             autoprefixer: {
               flexbox: 'no-2009',

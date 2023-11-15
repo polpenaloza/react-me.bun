@@ -36,7 +36,7 @@
     "react-text-transition": "^3.1.0",
     "sharp": "^0.32.5",
     "sugar": "^2.0.6",
-    "superjson": "^1.13.1",
+    "superjson": "^2.2.1",
     "tsparticles": "^2.12.0",
     "zod": "^3.22.2",
     "zustand": "^4.4.1"
